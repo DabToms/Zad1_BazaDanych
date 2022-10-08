@@ -16,11 +16,13 @@ internal class Program
         connection3.Set(2, 'e');
         connection4.Set(3, 'r');
 
+        // Wypisanie identyfikatorów połączeń
         Console.WriteLine($"GUID połączenia {nameof(connection1)} : {connection1.GetGuid()}");
         Console.WriteLine($"GUID połączenia {nameof(connection2)} : {connection2.GetGuid()}");
         Console.WriteLine($"GUID połączenia {nameof(connection3)} : {connection3.GetGuid()}");
         Console.WriteLine($"GUID połączenia {nameof(connection4)} : {connection4.GetGuid()}");
 
+        // Wypisanie wpisanych danych z każdego połączenia w celu pokazania, że mamy tylko 1 bazę i tylko 3 połączenia
         for (int i = 0; i < 4; i++)
         {
             Console.WriteLine($"W połączeniu {nameof(connection1)} na pozycji {i} przechowujemy znak: {connection1.Get(i)}");
