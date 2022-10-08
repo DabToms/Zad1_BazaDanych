@@ -21,12 +21,15 @@ public class DataBase
     /// <summary>
     /// Pobranie połączenia do bazy danych.
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Połączenia do bazy danych.</returns>
     public static IConnection GetConnection()
     {
         return Connection.GetInstance();
     }
 
+    /// <summary>
+    /// Klasa udostępniająca połączenie do bazy danych.
+    /// </summary>
     private class Connection : IConnection // klasa nie może by statyczna bo CS0714 https://learn.microsoft.com/en-us/dotnet/csharp/misc/cs0714?f1url=%3FappId%3Droslyn%26k%3Dk(CS0714)
     {
         /// <summary>
@@ -59,6 +62,9 @@ public class DataBase
         /// </summary>
         private static int counter = 0;
 
+        /// <summary>
+        /// Konstruktor inicjalizujący identyfikator połączenia.
+        /// </summary>
         private Connection()
         {
             Id = Guid.NewGuid();

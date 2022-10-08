@@ -26,7 +26,7 @@ public interface IConnection
     void Set(int indeks, char c);
 
     /// <summary>
-    /// PObranie długości elementów w bazie danych.
+    /// Pobranie długości elementów w bazie danych.
     /// </summary>
     /// <returns></returns>
     int Length();
