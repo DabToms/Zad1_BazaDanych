@@ -35,5 +35,5 @@ public interface IConnection
     /// Pobranie identyfikatora połączenia.
     /// </summary>
     /// <returns>GUID połączenia.</returns>
-    Guid GetGuid();
+    int GetGuid();
 }

@@ -38,36 +38,26 @@ public class DataBase
         private static DataBase? Baza;
 
         /// <summary>
-        /// Pierwsze połączenie.
+        /// Lista połączeń połączenie.
         /// </summary>
-        private static IConnection? Connection1 { get; set; }
-
-        /// <summary>
-        /// Drugie połączenie.
-        /// </summary>
-        private static IConnection? Connection2 { get; set; }
-
-        /// <summary>
-        /// Trzecie połączenie.
-        /// </summary>
-        private static IConnection? Connection3 { get; set; }
+        private static IConnection[] Connections = new IConnection[] { new Connection(1), new Connection(2), new Connection(3) };
 
         /// <summary>
         /// Identyfikator identyfikujący połączenie;
         /// </summary>
-        public Guid Id { get; private set; }
+        public int Id { get; private set; }
 
         /// <summary>
         /// Licznik połączenia;
         /// </summary>
-        private static int counter = 0;
+        private static int counter = Connections.Length - 1;
 
         /// <summary>
         /// Konstruktor inicjalizujący identyfikator połączenia.
         /// </summary>
-        private Connection()
+        private Connection(int id)
         {
-            Id = Guid.NewGuid();
+            Id = id;
         }
 
         /// <inheritdoc />
@@ -78,31 +68,8 @@ public class DataBase
                 Baza = new DataBase();
             }
 
-            counter = ++counter % 3;
-
-            switch (counter%3)
-            {
-                case 0:
-                    if (Connection1 == null)
-                    {
-                        Connection1 = new Connection();
-                    }
-                    return Connection1;
-                case 1:
-                    if (Connection2 == null)
-                    {
-                        Connection2 = new Connection();
-                    }
-                    return Connection2;
-                case 2:
-                    if (Connection3 == null)
-                    {
-                        Connection3 = new Connection();
-                    }
-                    return Connection3;
-                default:
-                    return new Connection();
-            }
+            counter = ++counter % Connections.Length;
+            return Connections[counter];
 
         }
 
@@ -140,7 +107,7 @@ public class DataBase
         }
 
         /// <inheritdoc />
-        public Guid GetGuid() => this.Id;
+        public int GetGuid() => this.Id;
     }
 
 }
