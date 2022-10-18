@@ -1,0 +1,12 @@
+C:\Users\dabto\Desktop\Studia\ZTP\Factory\Factory.Core\bin\Debug\net6.0\Factory.Core.deps.json
+C:\Users\dabto\Desktop\Studia\ZTP\Factory\Factory.Core\bin\Debug\net6.0\Factory.Core.dll
+C:\Users\dabto\Desktop\Studia\ZTP\Factory\Factory.Core\bin\Debug\net6.0\Factory.Core.pdb
+C:\Users\dabto\Desktop\Studia\ZTP\Factory\Factory.Core\obj\Debug\net6.0\Factory.Core.csproj.AssemblyReference.cache
+C:\Users\dabto\Desktop\Studia\ZTP\Factory\Factory.Core\obj\Debug\net6.0\Factory.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dabto\Desktop\Studia\ZTP\Factory\Factory.Core\obj\Debug\net6.0\Factory.Core.AssemblyInfoInputs.cache
+C:\Users\dabto\Desktop\Studia\ZTP\Factory\Factory.Core\obj\Debug\net6.0\Factory.Core.AssemblyInfo.cs
+C:\Users\dabto\Desktop\Studia\ZTP\Factory\Factory.Core\obj\Debug\net6.0\Factory.Core.csproj.CoreCompileInputs.cache
+C:\Users\dabto\Desktop\Studia\ZTP\Factory\Factory.Core\obj\Debug\net6.0\Factory.Core.dll
+C:\Users\dabto\Desktop\Studia\ZTP\Factory\Factory.Core\obj\Debug\net6.0\refint\Factory.Core.dll
+C:\Users\dabto\Desktop\Studia\ZTP\Factory\Factory.Core\obj\Debug\net6.0\Factory.Core.pdb
+C:\Users\dabto\Desktop\Studia\ZTP\Factory\Factory.Core\obj\Debug\net6.0\ref\Factory.Core.dll
