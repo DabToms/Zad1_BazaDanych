@@ -52,4 +52,9 @@ public partial class PopupForm : Form
                         new TableHeader("BOOLEAN"),
                     });
     }
+
+    private void Description_Click(object sender, EventArgs e)
+    {
+
+    }
 }
