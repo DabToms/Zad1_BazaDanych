@@ -62,7 +62,6 @@ partial class PopupForm
             this.Description.Size = new System.Drawing.Size(177, 15);
             this.Description.TabIndex = 2;
             this.Description.Text = "Wybierz typ kolumnych  danych";
-            this.Description.Click += new System.EventHandler(this.Description_Click);
             // 
             // TypeHolder
             // 

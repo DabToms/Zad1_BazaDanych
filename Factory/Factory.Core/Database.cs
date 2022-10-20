@@ -1,16 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Factory.Core.TableDatas;
+using Factory.Core.TableHeaders;
 
 namespace Factory.Core;
-public class Database : AbstractTableModel
+
+/// <summary>
+/// Baza danych zarządzająca kolumnami i wierszami przechowujące dane.
+/// </summary>
+public class Database
 {
     /// <summary>
     /// Lista nagłówków.
     /// </summary>
-    public List<TableHeader> headers;
+    public List<ITableHeader> headers;
 
     /// <summary>
     /// Wiersz z danymi(mogą być różnego typów).
@@ -22,7 +23,7 @@ public class Database : AbstractTableModel
     /// </summary>
     public Database()
     {
-        headers = new List<TableHeader>();
+        headers = new List<ITableHeader>();
         data = new List<List<ITableData>>();
     }
 
@@ -34,7 +35,14 @@ public class Database : AbstractTableModel
         List<ITableData> row = new List<ITableData>();
         foreach (var col in headers)
         {
-            row.Add(new TableDataInt()); // wywołanie metody fabrykującej
+            if (col is TableHeaderPrototype)
+            {
+                row.Add(col.Clone()); // wywołanie metody klonującej
+            }
+            else
+            {
+                row.Add(col.CreateData()); // wywołanie metody fabrykującej
+            }
         }
         data.Add(row);
     }
@@ -42,13 +50,26 @@ public class Database : AbstractTableModel
     /// <summary>
     /// Dodanie kolumny.
     /// </summary>
-    /// <param name="type">Nagłówke przechowujący typ.</param>
+    /// <param name="type">Nagłówek przechowujący typ.</param>
     public void addCol(TableHeader type)
     {
         headers.Add(type);
         foreach (var row in data)
         {
-            row.Add(new TableDataInt()); // wywołanie metody fabrykującej
+            row.Add(type.CreateData()); // wywołanie metody fabrykującej
+        }
+    }
+
+    /// <summary>
+    /// Dodanie kolumny.
+    /// </summary>
+    /// <param name="type">Nagłówke przechowujący typ.</param>
+    public void addCol(TableHeaderPrototype type)
+    {
+        headers.Add(type);
+        foreach (var row in data)
+        {
+            row.Add(type.Clone()); // wywołanie metody klonującej
         }
     }
 
@@ -69,7 +90,7 @@ public class Database : AbstractTableModel
     /// </summary>
     /// <param name="column">Index kolumny.</param>
     /// <returns>Nazwa kolumny.</returns>
-    public string getColumnName(int column) => headers[column].ToString();
+    public string? getColumnName(int column) => column < headers.Count ? headers[column].ToString() : "No_Data";
 
     /// <summary>
     /// Pobranie wartości przecowywanej wartości w kolumnie i wierszu.
