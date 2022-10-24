@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zad3_builder", "Zad3_builder\Zad3_builder.csproj", "{39B32F93-BD00-4495-B950-4600928815CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zad3_builder.Core", "Zad3_builder.Core\Zad3_builder.Core.csproj", "{A69B29AF-D1E6-4C10-BA85-A17A9DE6AE36}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{39B32F93-BD00-4495-B950-4600928815CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39B32F93-BD00-4495-B950-4600928815CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39B32F93-BD00-4495-B950-4600928815CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39B32F93-BD00-4495-B950-4600928815CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A69B29AF-D1E6-4C10-BA85-A17A9DE6AE36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A69B29AF-D1E6-4C10-BA85-A17A9DE6AE36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A69B29AF-D1E6-4C10-BA85-A17A9DE6AE36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A69B29AF-D1E6-4C10-BA85-A17A9DE6AE36}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3ABB4ABC-182A-4A0D-9623-85BECFA52A71}
+	EndGlobalSection
+EndGlobal

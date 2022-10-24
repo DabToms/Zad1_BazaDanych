@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "1lrtJn6cVWnANr1DUPdM8LeLgeOSvzJJmfw8+0sb2esjDijvRJ5x47IfSS5Ev3pm3DCcAACX03o/sBc7CmZhkg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\dabto\\Desktop\\Studia\\ZTP\\Zad3_builder\\Zad3_builder\\Zad3_builder.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://172.23.6.174/nugethub/nuget'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
+}

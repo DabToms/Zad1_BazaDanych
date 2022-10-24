@@ -15,7 +15,7 @@ public class TableDataDouble : AbstractTableData
     /// </summary>
     public TableDataDouble()
     {
-        data = rnd.NextDouble();
+        data = Math.Round(rnd.NextDouble(),5);
     }
 
     /// <inheritdoc />
