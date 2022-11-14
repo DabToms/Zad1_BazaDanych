@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 
 using Zad3_builder.Core.Segments;
-
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Zad3_builder.Core;
 public class Sprite
@@ -23,10 +17,10 @@ public class Sprite
     private readonly int W = 16;
     private readonly int H = 27; // wysokosc i szerokosc sprite'a
 
-    public Sprite(List<Segment> pl, String imageName)
+    public Sprite(List<Segment> pl, string imageName)
     {
         plansza = pl;
-        img = ImgUtils.getImage(imageName);
+        img = Image.FromFile(imageName);
     }
 
     public int getX()
@@ -132,18 +126,21 @@ public class Sprite
                 frame -= anim.Length;
             }
         }
+
         // przesuniecie w poziomie
         for (int i = 0; i < Math.Abs(moving); ++i)
         {
             collide((int)Math.Sign(moving), 0);
             x += (int)Math.Sign(moving);
         }
+
         // przesuniecie w pionie
         for (int i = 0; i < Math.Abs(jumping); ++i)
         {
             collide(0, -(int)Math.Sign(jumping));
             y -= (int)Math.Sign(jumping);
         }
+
         // czy mamy grunt pod nogami?
         jumping--;
         collide(0, 1);
@@ -159,6 +156,6 @@ public class Sprite
 
     public void draw(Graphics g)
     {
-        g.drawImage(img, x + (mirror ? W : 0), y, x + (mirror ? 0 : W), y + H, anim[frame] * W, 0, anim[frame] * W + W, H, null);
+       // g.DrawImage(img, x + (mirror ? W : 0), y, x + (mirror ? 0 : W), y + H, anim[frame] * W, 0, anim[frame] * W + W, H, null);
     }
 }

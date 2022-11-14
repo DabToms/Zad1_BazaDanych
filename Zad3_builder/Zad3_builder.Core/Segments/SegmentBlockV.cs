@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Zad3_builder.Core.Segments;
+﻿namespace Zad3_builder.Core.Segments;
 public class SegmentBlockV : Segment
 {
-    public SegmentBlockV(int x, int y, String file)
+    public SegmentBlockV(int x, int y, string file)
         : base(x, y, file)
     {
     }

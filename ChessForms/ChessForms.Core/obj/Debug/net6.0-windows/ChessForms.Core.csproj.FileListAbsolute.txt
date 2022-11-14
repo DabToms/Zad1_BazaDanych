@@ -1,0 +1,12 @@
+C:\Users\dabto\Desktop\Studia\ZTP\ChessForms\ChessForms.Core\bin\Debug\net6.0-windows\ChessForms.Core.deps.json
+C:\Users\dabto\Desktop\Studia\ZTP\ChessForms\ChessForms.Core\bin\Debug\net6.0-windows\ChessForms.Core.dll
+C:\Users\dabto\Desktop\Studia\ZTP\ChessForms\ChessForms.Core\bin\Debug\net6.0-windows\ChessForms.Core.pdb
+C:\Users\dabto\Desktop\Studia\ZTP\ChessForms\ChessForms.Core\obj\Debug\net6.0-windows\ChessForms.Core.csproj.AssemblyReference.cache
+C:\Users\dabto\Desktop\Studia\ZTP\ChessForms\ChessForms.Core\obj\Debug\net6.0-windows\ChessForms.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dabto\Desktop\Studia\ZTP\ChessForms\ChessForms.Core\obj\Debug\net6.0-windows\ChessForms.Core.AssemblyInfoInputs.cache
+C:\Users\dabto\Desktop\Studia\ZTP\ChessForms\ChessForms.Core\obj\Debug\net6.0-windows\ChessForms.Core.AssemblyInfo.cs
+C:\Users\dabto\Desktop\Studia\ZTP\ChessForms\ChessForms.Core\obj\Debug\net6.0-windows\ChessForms.Core.csproj.CoreCompileInputs.cache
+C:\Users\dabto\Desktop\Studia\ZTP\ChessForms\ChessForms.Core\obj\Debug\net6.0-windows\ChessForms.Core.dll
+C:\Users\dabto\Desktop\Studia\ZTP\ChessForms\ChessForms.Core\obj\Debug\net6.0-windows\refint\ChessForms.Core.dll
+C:\Users\dabto\Desktop\Studia\ZTP\ChessForms\ChessForms.Core\obj\Debug\net6.0-windows\ChessForms.Core.pdb
+C:\Users\dabto\Desktop\Studia\ZTP\ChessForms\ChessForms.Core\obj\Debug\net6.0-windows\ref\ChessForms.Core.dll

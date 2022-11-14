@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using static System.Net.Mime.MediaTypeNames;
+﻿using System.Drawing;
 
 namespace Zad3_builder.Core.Segments;
 public class Segment
@@ -16,13 +9,13 @@ public class Segment
     protected int W;
     protected int H;
 
-    public Segment(int x, int y, String file)
+    public Segment(int x, int y, string file)
     {
         this.x = x;
         this.y = y;
-        img = ImgUtils.getImage(file);
-        W = img.getWidth(null);
-        H = img.getHeight(null);
+        img = Image.FromFile(file);
+        W = img.Width;
+        H = img.Height;
     }
 
     public Rectangle getBounds()
@@ -30,12 +23,12 @@ public class Segment
         return new Rectangle(x, y, W, H);
     }
 
-    public void draw(Graphics g)
+    public virtual void draw(Graphics g)
     {
-        g.drawImage(img, x, y, null);
+        g.DrawImage(img, new Point(this.x, this.y));
     }
 
-    public void tick()
+    public virtual void tick()
     {
     }
 

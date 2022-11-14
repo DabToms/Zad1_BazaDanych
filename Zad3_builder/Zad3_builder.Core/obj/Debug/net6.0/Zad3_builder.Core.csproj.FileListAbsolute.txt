@@ -1,0 +1,13 @@
+C:\Users\dabto\Desktop\Studia\ZTP\Zad3_builder\Zad3_builder.Core\bin\Debug\net6.0\Zad3_builder.Core.deps.json
+C:\Users\dabto\Desktop\Studia\ZTP\Zad3_builder\Zad3_builder.Core\bin\Debug\net6.0\Zad3_builder.Core.dll
+C:\Users\dabto\Desktop\Studia\ZTP\Zad3_builder\Zad3_builder.Core\bin\Debug\net6.0\Zad3_builder.Core.pdb
+C:\Users\dabto\Desktop\Studia\ZTP\Zad3_builder\Zad3_builder.Core\obj\Debug\net6.0\Zad3_builder.Core.csproj.AssemblyReference.cache
+C:\Users\dabto\Desktop\Studia\ZTP\Zad3_builder\Zad3_builder.Core\obj\Debug\net6.0\Zad3_builder.Core.csproj.ResolveComReference.cache
+C:\Users\dabto\Desktop\Studia\ZTP\Zad3_builder\Zad3_builder.Core\obj\Debug\net6.0\Zad3_builder.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dabto\Desktop\Studia\ZTP\Zad3_builder\Zad3_builder.Core\obj\Debug\net6.0\Zad3_builder.Core.AssemblyInfoInputs.cache
+C:\Users\dabto\Desktop\Studia\ZTP\Zad3_builder\Zad3_builder.Core\obj\Debug\net6.0\Zad3_builder.Core.AssemblyInfo.cs
+C:\Users\dabto\Desktop\Studia\ZTP\Zad3_builder\Zad3_builder.Core\obj\Debug\net6.0\Zad3_builder.Core.csproj.CoreCompileInputs.cache
+C:\Users\dabto\Desktop\Studia\ZTP\Zad3_builder\Zad3_builder.Core\obj\Debug\net6.0\Zad3_builder.Core.dll
+C:\Users\dabto\Desktop\Studia\ZTP\Zad3_builder\Zad3_builder.Core\obj\Debug\net6.0\refint\Zad3_builder.Core.dll
+C:\Users\dabto\Desktop\Studia\ZTP\Zad3_builder\Zad3_builder.Core\obj\Debug\net6.0\Zad3_builder.Core.pdb
+C:\Users\dabto\Desktop\Studia\ZTP\Zad3_builder\Zad3_builder.Core\obj\Debug\net6.0\ref\Zad3_builder.Core.dll

@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "MIQ5Bvn5vtVieB+6shP/vQT+O7FTq1KmgtzTic4wdrlxO3+x7MeBD57hEPVocBvu1CmXkSEr6qHRfuCVaCku7w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\dabto\\Desktop\\Studia\\ZTP\\ProxyAdapterForms\\ProxyAdapterForms.Core\\ProxyAdapterForms.Core.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://172.23.6.174/nugethub/nuget'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
+}

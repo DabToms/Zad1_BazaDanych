@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "gQIF1xzBnYvCBJwLR0bJVuIqOtvnXCP7L10bD6hcA2vEKy8ktaaKJZqK2ZZCWkT6eetbmEJQfezVDzl7G/ZOVA==",
+  "dgSpecHash": "c05r81gKRPVT9gdbI3SSRXjshhIG0OTMsLycfyzhSp9V05XoQGTu3wSrTZKFpn6wUYX8yvO/G1LG8/2wpZbyug==",
   "success": true,
   "projectFilePath": "C:\\Users\\dabto\\Desktop\\Studia\\ZTP\\Zad3_builder\\Zad3_builder.Core\\Zad3_builder.Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\dabto\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\dabto\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
+  ],
   "logs": [
     {
       "code": "NU1803",

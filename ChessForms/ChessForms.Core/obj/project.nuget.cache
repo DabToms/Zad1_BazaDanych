@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "238nZPQaMqjGdGRIGOEXeUhtVkkS0u+VTpF3YyoLctMvHHOWntiba1NpWRf1CU8vHymi1BkoQDFFXzufuENQBw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\dabto\\Desktop\\Studia\\ZTP\\ChessForms\\ChessForms.Core\\ChessForms.Core.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://172.23.6.174/nugethub/nuget'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
+}
