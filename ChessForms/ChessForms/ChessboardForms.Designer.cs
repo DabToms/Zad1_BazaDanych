@@ -34,7 +34,7 @@ partial class ChessboardForms
             // 
             // Undo
             // 
-            this.Undo.Location = new System.Drawing.Point(129, 25);
+            this.Undo.Location = new System.Drawing.Point(65, 261);
             this.Undo.Name = "Undo";
             this.Undo.Size = new System.Drawing.Size(75, 23);
             this.Undo.TabIndex = 0;
@@ -44,7 +44,7 @@ partial class ChessboardForms
             // 
             // Redo
             // 
-            this.Redo.Location = new System.Drawing.Point(300, 25);
+            this.Redo.Location = new System.Drawing.Point(220, 261);
             this.Redo.Name = "Redo";
             this.Redo.Size = new System.Drawing.Size(75, 23);
             this.Redo.TabIndex = 1;
@@ -62,6 +62,7 @@ partial class ChessboardForms
             this.Controls.Add(this.Undo);
             this.Name = "ChessboardForms";
             this.Text = "Form1";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.ChessboardForms_Paint);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ChessboardForms_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ChessboardForms_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ChessboardForms_MouseUp);

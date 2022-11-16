@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Drawing;
+using System.Security.AccessControl;
 
 namespace ChessForms;
 
@@ -31,18 +32,24 @@ public partial class ChessboardForms : Form
 
         try
         {
-            image = Image.FromFile("/img/board3.png");
+            image = Image.FromFile("C:\\Users\\dabto\\Desktop\\Studia\\ZTP\\ChessForms\\ChessForms\\img\\board3.png");
         }
-        catch (IOException e)
+        catch
         {
             throw new Exception("Brak pliku szachownicy.");
         }
         this.Size = this.image.Size;
 
-        Undo.Image = Image.FromFile("/img/undo.png");
-        Redo.Image = Image.FromFile("/img/redo.png");
+        Undo.Image = Image.FromFile("C:\\Users\\dabto\\Desktop\\Studia\\ZTP\\ChessForms\\ChessForms\\img\\undo.png");
+        Redo.Image = Image.FromFile("C:\\Users\\dabto\\Desktop\\Studia\\ZTP\\ChessForms\\ChessForms\\img\\redo.png");
         Undo.Enabled = false;
         Redo.Enabled = false;
+    }
+
+    private void ChessboardForms_MouseDown(object sender, MouseEventArgs e)
+    {
+        current = take((e.X - ZEROX) / Figure.TILESIZE, (e.Y - ZEROY) / Figure.TILESIZE);
+        this.mouse = e.Location;
     }
 
     private void ChessboardForms_MouseUp(object sender, MouseEventArgs e)
@@ -55,15 +62,10 @@ public partial class ChessboardForms : Form
         }
     }
 
-    private void ChessboardForms_MouseDown(object sender, MouseEventArgs e)
-    {
-        current = take((e.X - ZEROX) / Figure.TILESIZE, (e.Y - ZEROY) / Figure.TILESIZE);
-        this.mouse = e.Location;
-    }
-
     private void ChessboardForms_MouseMove(object sender, MouseEventArgs e)
     {
         this.mouse = e.Location;
+        this.Refresh();
     }
 
     private void Undo_Click(object sender, EventArgs e)
@@ -79,26 +81,41 @@ public partial class ChessboardForms : Form
 
     public void drop(Figure p, int x, int y)
     {
-        // repaint();
+        this.Refresh();
         p.moveTo(x, y);
-        board.Add(new Point(x, y), p); // jeœli na tych wspó³rzêdnych
-                                       // jest ju¿ jakaœ figura, znika ona z planszy
-                                       // (HashMap nie dopuszcza powtórzeñ)
+        if (board.ContainsKey(new Point(x, y)))
+        {
+            board.Remove(new Point(x, y));
+            board.Add(new Point(x, y), p);
+        }
+        else
+        {
+            board.Add(new Point(x, y), p);
+        }
     }
 
-    public Figure take(int x, int y)
+    public Figure? take(int x, int y)
     {
-        // repaint();
-        return board[new Point(x, y)];
+        this.Refresh();
+
+        if (board.ContainsKey(new Point(x, y)))
+        {
+            return board[new Point(x, y)];
+        }
+        return null;
     }
 
     private void Redo_Paint(object sender, PaintEventArgs e)
     {
-        base.OnPaint(e);
-        var graphic = e.Graphics;
-        graphic.DrawImage(image, new Point(0,0));
+    }
 
-        foreach(var hash in board)
+    private void ChessboardForms_Paint(object sender, PaintEventArgs e)
+    {
+        //base.OnPaint(e);
+        var graphic = e.Graphics;
+        graphic.DrawImage(image, new Point(0, 0));
+
+        foreach (var hash in board)
         {
             Point pt = hash.Key;
             Figure pc = hash.Value;
