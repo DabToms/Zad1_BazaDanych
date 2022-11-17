@@ -1,0 +1,15 @@
+C:\Users\dabto\Desktop\Studia\ZTP\Zad1_BAzaDanych\Zad1_BAzaDanych\obj\Debug\net6.0\Zad1_BAzaDanych.csproj.AssemblyReference.cache
+C:\Users\dabto\Desktop\Studia\ZTP\Zad1_BAzaDanych\Zad1_BAzaDanych\obj\Debug\net6.0\Zad1_BAzaDanych.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dabto\Desktop\Studia\ZTP\Zad1_BAzaDanych\Zad1_BAzaDanych\obj\Debug\net6.0\Zad1_BAzaDanych.AssemblyInfoInputs.cache
+C:\Users\dabto\Desktop\Studia\ZTP\Zad1_BAzaDanych\Zad1_BAzaDanych\obj\Debug\net6.0\Zad1_BAzaDanych.AssemblyInfo.cs
+C:\Users\dabto\Desktop\Studia\ZTP\Zad1_BAzaDanych\Zad1_BAzaDanych\obj\Debug\net6.0\Zad1_BAzaDanych.csproj.CoreCompileInputs.cache
+C:\Users\dabto\Desktop\Studia\ZTP\Zad1_BAzaDanych\Zad1_BAzaDanych\bin\Debug\net6.0\Zad1_BAzaDanych.exe
+C:\Users\dabto\Desktop\Studia\ZTP\Zad1_BAzaDanych\Zad1_BAzaDanych\bin\Debug\net6.0\Zad1_BAzaDanych.deps.json
+C:\Users\dabto\Desktop\Studia\ZTP\Zad1_BAzaDanych\Zad1_BAzaDanych\bin\Debug\net6.0\Zad1_BAzaDanych.runtimeconfig.json
+C:\Users\dabto\Desktop\Studia\ZTP\Zad1_BAzaDanych\Zad1_BAzaDanych\bin\Debug\net6.0\Zad1_BAzaDanych.dll
+C:\Users\dabto\Desktop\Studia\ZTP\Zad1_BAzaDanych\Zad1_BAzaDanych\bin\Debug\net6.0\Zad1_BAzaDanych.pdb
+C:\Users\dabto\Desktop\Studia\ZTP\Zad1_BAzaDanych\Zad1_BAzaDanych\obj\Debug\net6.0\Zad1_BAzaDanych.dll
+C:\Users\dabto\Desktop\Studia\ZTP\Zad1_BAzaDanych\Zad1_BAzaDanych\obj\Debug\net6.0\refint\Zad1_BAzaDanych.dll
+C:\Users\dabto\Desktop\Studia\ZTP\Zad1_BAzaDanych\Zad1_BAzaDanych\obj\Debug\net6.0\Zad1_BAzaDanych.pdb
+C:\Users\dabto\Desktop\Studia\ZTP\Zad1_BAzaDanych\Zad1_BAzaDanych\obj\Debug\net6.0\Zad1_BAzaDanych.genruntimeconfig.cache
+C:\Users\dabto\Desktop\Studia\ZTP\Zad1_BAzaDanych\Zad1_BAzaDanych\obj\Debug\net6.0\ref\Zad1_BAzaDanych.dll
