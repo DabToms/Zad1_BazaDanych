@@ -2,12 +2,15 @@ using System.Collections;
 using System.Drawing;
 using System.Security.AccessControl;
 
+using ChessForms.Decorators;
+using ChessForms.Figures;
+
 namespace ChessForms;
 
 public partial class ChessboardForms : Form
 {
     public static readonly int ZEROX = 23;
-    static readonly int ZEROY = 7;
+    public static readonly int ZEROY = 7;
 
     private Dictionary<Point, Figure> board = new Dictionary<Point, Figure>();
 
@@ -42,6 +45,8 @@ public partial class ChessboardForms : Form
 
         Undo.Image = Image.FromFile("C:\\Users\\dabto\\Desktop\\Studia\\ZTP\\ChessForms\\ChessForms\\img\\undo.png");
         Redo.Image = Image.FromFile("C:\\Users\\dabto\\Desktop\\Studia\\ZTP\\ChessForms\\ChessForms\\img\\redo.png");
+        //Undo.Size = Undo.Image.Size;
+        //Redo.Size = Redo.Image.Size;
         Undo.Enabled = false;
         Redo.Enabled = false;
     }
@@ -105,10 +110,6 @@ public partial class ChessboardForms : Form
         return null;
     }
 
-    private void Redo_Paint(object sender, PaintEventArgs e)
-    {
-    }
-
     private void ChessboardForms_Paint(object sender, PaintEventArgs e)
     {
         //base.OnPaint(e);
@@ -119,12 +120,14 @@ public partial class ChessboardForms : Form
         {
             Point pt = hash.Key;
             Figure pc = hash.Value;
-            pc.draw(graphic);
+            var decoratedFigure = new TransformatedDecorator(pc);
+            decoratedFigure.draw(graphic);
         }
 
         if (mouse != null && current != null)
         {
-            this.current.draw(graphic);
+            var decoratedFigure = new TransformatedDecorator(this.current);
+            decoratedFigure.draw(graphic);
         }
     }
 }

@@ -34,24 +34,21 @@ partial class ChessboardForms
             // 
             // Undo
             // 
-            this.Undo.Location = new System.Drawing.Point(65, 261);
+            this.Undo.Location = new System.Drawing.Point(57, 394);
             this.Undo.Name = "Undo";
             this.Undo.Size = new System.Drawing.Size(75, 23);
             this.Undo.TabIndex = 0;
-            this.Undo.Text = "Undo";
             this.Undo.UseVisualStyleBackColor = true;
             this.Undo.Click += new System.EventHandler(this.Undo_Click);
             // 
             // Redo
             // 
-            this.Redo.Location = new System.Drawing.Point(220, 261);
+            this.Redo.Location = new System.Drawing.Point(221, 394);
             this.Redo.Name = "Redo";
             this.Redo.Size = new System.Drawing.Size(75, 23);
             this.Redo.TabIndex = 1;
-            this.Redo.Text = "Redo";
             this.Redo.UseVisualStyleBackColor = true;
             this.Redo.Click += new System.EventHandler(this.Redo_Click);
-            this.Redo.Paint += new System.Windows.Forms.PaintEventHandler(this.Redo_Paint);
             // 
             // ChessboardForms
             // 
