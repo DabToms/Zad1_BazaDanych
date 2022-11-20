@@ -16,7 +16,6 @@ public class TransformatedDecorator : AbstractDecorator
     {
         g.Transform = new Matrix();
         g.TranslateTransform(ChessboardForms.ZEROX,ChessboardForms.ZEROY);
-        g.ScaleTransform(1,1);
         base.draw(g);
     }
 }

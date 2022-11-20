@@ -14,4 +14,6 @@ public interface IFigure
     int getY();
 
     void moveTo(int xx, int yy);
+
+    IFigure Unbox();
 }

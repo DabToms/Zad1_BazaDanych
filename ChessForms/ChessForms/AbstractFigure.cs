@@ -35,4 +35,9 @@ public abstract class AbstractFigure : IFigure
         x = xx;
         y = yy;
     }
+
+    public IFigure Unbox()
+    {
+        return this;
+    }
 }

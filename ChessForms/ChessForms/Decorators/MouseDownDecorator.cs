@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,15 +10,16 @@ using ChessForms.Figures;
 namespace ChessForms.Decorators;
 public class MouseDownDecorator : AbstractDecorator
 {
-    public MouseDownDecorator(IFigure fig) : base(fig)
-    {
+    Matrix Mat;
+    public MouseDownDecorator(IFigure fig, Matrix mat) : base(fig)
+    {  
+        Mat = mat;
     }
     public override void draw(Graphics g)
     {
         g.TranslateTransform(ChessboardForms.ZEROX, ChessboardForms.ZEROY);
-        g.ScaleTransform(AbstractFigure.TILESIZE, AbstractFigure.TILESIZE);
+        g.MultiplyTransform(Mat);
         base.draw(g);
-        g.TranslateTransform(0, 0);
-        g.ScaleTransform(1, 1);
+        g.Transform = new Matrix();
     }
 }

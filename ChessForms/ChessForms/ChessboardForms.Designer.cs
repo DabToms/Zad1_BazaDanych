@@ -54,7 +54,7 @@ partial class ChessboardForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(384, 430);
             this.Controls.Add(this.Redo);
             this.Controls.Add(this.Undo);
             this.Name = "ChessboardForms";

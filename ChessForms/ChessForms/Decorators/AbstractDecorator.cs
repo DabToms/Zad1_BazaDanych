@@ -33,4 +33,9 @@ public class AbstractDecorator : IFigure
     {
         Figure.moveTo(xx, yy);
     }
+
+    public virtual IFigure Unbox()
+    {
+        return Figure.Unbox();
+    }
 }

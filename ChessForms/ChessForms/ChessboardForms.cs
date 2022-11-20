@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Security.AccessControl;
 
 using ChessForms.Decorators;
@@ -12,11 +14,12 @@ public partial class ChessboardForms : Form
     public static readonly int ZEROX = 23;
     public static readonly int ZEROY = 7;
 
-    private Dictionary<Point, Figure> board = new Dictionary<Point, Figure>();
+    private Dictionary<Point, IFigure> board = new Dictionary<Point, IFigure>();
 
     private Image image;
-    private Figure? current = null;
+    private IFigure? current = null;
     private Point? mouse = null;
+    private Matrix mat = new Matrix();
 
     public ChessboardForms()
     {
@@ -29,31 +32,33 @@ public partial class ChessboardForms : Form
         board.Add(new Point(4, 3), new Figure(6, 4, 3));
         board.Add(new Point(4, 4), new Figure(7, 4, 4));
         board.Add(new Point(5, 4), new Figure(6, 5, 4));
-        board.Add(new Point(5, 6), new Figure(0, 5, 6));
-        board.Add(new Point(6, 5), new Figure(0, 6, 5));
+        board.Add(new Point(5, 6), new Figure(0, 6, 5));
         board.Add(new Point(7, 4), new Figure(0, 7, 4));
 
         try
         {
-            image = Image.FromFile("C:\\Users\\dabto\\Desktop\\Studia\\ZTP\\ChessForms\\ChessForms\\img\\board3.png");
+            image = Image.FromFile("C:\\Users\\dabto\\Desktop\\Studia\\ZTP\\Zad1_BAzaDanych\\ChessForms\\ChessForms\\img\\board3.png");
         }
         catch
         {
             throw new Exception("Brak pliku szachownicy.");
         }
-        this.Size = this.image.Size;
+        this.Size = new Size(400, 460);
 
-        Undo.Image = Image.FromFile("C:\\Users\\dabto\\Desktop\\Studia\\ZTP\\ChessForms\\ChessForms\\img\\undo.png");
-        Redo.Image = Image.FromFile("C:\\Users\\dabto\\Desktop\\Studia\\ZTP\\ChessForms\\ChessForms\\img\\redo.png");
-        //Undo.Size = Undo.Image.Size;
-        //Redo.Size = Redo.Image.Size;
+        Undo.Image = Image.FromFile("C:\\Users\\dabto\\Desktop\\Studia\\ZTP\\Zad1_BAzaDanych\\ChessForms\\ChessForms\\img\\undo.png");
+        Redo.Image = Image.FromFile("C:\\Users\\dabto\\Desktop\\Studia\\ZTP\\Zad1_BAzaDanych\\ChessForms\\ChessForms\\img\\redo.png");
         Undo.Enabled = false;
         Redo.Enabled = false;
     }
 
     private void ChessboardForms_MouseDown(object sender, MouseEventArgs e)
     {
-        current = take((e.X - ZEROX) / Figure.TILESIZE, (e.Y - ZEROY) / Figure.TILESIZE);
+        var takenFigure = take((e.X - ZEROX) / Figure.TILESIZE, (e.Y - ZEROY) / Figure.TILESIZE);
+        if (takenFigure != null)
+        {
+            mat = new Matrix();
+            current = new MouseDownDecorator(takenFigure, mat);
+        }
         this.mouse = e.Location;
     }
 
@@ -61,7 +66,7 @@ public partial class ChessboardForms : Form
     {
         if (current != null)
         {
-            drop(current, (e.X - ZEROX) / Figure.TILESIZE, (e.Y - ZEROY) / Figure.TILESIZE);
+            drop(current.Unbox(), (e.X - ZEROX) / Figure.TILESIZE, (e.Y - ZEROY) / Figure.TILESIZE);
             current = null;
             Undo.Enabled = true;
         }
@@ -69,6 +74,10 @@ public partial class ChessboardForms : Form
 
     private void ChessboardForms_MouseMove(object sender, MouseEventArgs e)
     {
+        if (mouse != null)
+        {
+            mat.Translate(e.X - this.mouse.Value.X, e.Y - this.mouse.Value.Y);
+        }
         this.mouse = e.Location;
         this.Refresh();
     }
@@ -84,7 +93,10 @@ public partial class ChessboardForms : Form
         Console.WriteLine("REDO");
     }
 
-    public void drop(Figure p, int x, int y)
+    private Dictionary<Point, IFigure> kolejkaUndo = new();
+    private int indexUndo = 0;
+
+    public void drop(IFigure p, int x, int y)
     {
         this.Refresh();
         p.moveTo(x, y);
@@ -97,9 +109,11 @@ public partial class ChessboardForms : Form
         {
             board.Add(new Point(x, y), p);
         }
+        kolejkaUndo.Add(new Point(x, y), p);
+        indexUndo = kolejkaUndo.Count();
     }
 
-    public Figure? take(int x, int y)
+    public IFigure? take(int x, int y)
     {
         this.Refresh();
 
@@ -118,9 +132,7 @@ public partial class ChessboardForms : Form
 
         foreach (var hash in board)
         {
-            Point pt = hash.Key;
-            Figure pc = hash.Value;
-            var decoratedFigure = new TransformatedDecorator(pc);
+            var decoratedFigure = new TransformatedDecorator(hash.Value);
             decoratedFigure.draw(graphic);
         }
 
