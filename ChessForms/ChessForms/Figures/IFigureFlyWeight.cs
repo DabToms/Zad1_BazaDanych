@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ChessForms.Figures;
-public interface IFigure
+public interface IFigureFlyWeight
 {
-    void draw(Graphics g);
-    IFigure Unbox();
+    void draw(Graphics g, Point coorginates);
+    IFigureFlyWeight Unbox();
 }

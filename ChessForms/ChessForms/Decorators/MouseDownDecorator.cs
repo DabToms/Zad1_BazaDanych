@@ -11,15 +11,15 @@ namespace ChessForms.Decorators;
 public class MouseDownDecorator : AbstractDecorator
 {
     Matrix Mat;
-    public MouseDownDecorator(IFigure fig, Matrix mat) : base(fig)
-    {  
+    public MouseDownDecorator(IFigureFlyWeight fig, Matrix mat) : base(fig)
+    {
         Mat = mat;
     }
-    public override void draw(Graphics g)
+    public override void draw(Graphics g, Point coordinates)
     {
         g.TranslateTransform(ChessboardForms.ZEROX, ChessboardForms.ZEROY);
         g.MultiplyTransform(Mat);
-        base.draw(g);
+        base.draw(g, coordinates);
         g.Transform = new Matrix();
     }
 }

@@ -9,17 +9,14 @@ using System.Threading.Tasks;
 namespace ChessForms.Figures;
 public class Figure : AbstractFigure
 {
-    private readonly Image image = Image.FromFile("C:\\Users\\dabto\\Desktop\\Studia\\ZTP\\Zad1_BAzaDanych\\ChessForms\\ChessForms\\img\\pieces4.png");
+    public readonly Image image = Image.FromFile("C:\\Users\\dabto\\Desktop\\Studia\\ZTP\\Zad1_BAzaDanych\\ChessForms\\ChessForms\\img\\pieces4.png");
 
-    public Figure(int idx, int xx, int yy) : base(idx, xx, yy)
+    public Figure(int idx) : base(idx)
     {
-        index = idx;
-        x = xx;
-        y = yy;
     }
     public override void draw(Graphics g)
     {
-        Rectangle sourceRect = new Rectangle(TILESIZE * index, 0, TILESIZE, TILESIZE);
-        g.DrawImage(image, x * TILESIZE, y*TILESIZE, sourceRect, GraphicsUnit.Pixel);
+       /* Rectangle sourceRect = new Rectangle(TILESIZE * index, 0, TILESIZE, TILESIZE);
+        g.DrawImage(image, x * TILESIZE, y*TILESIZE, sourceRect, GraphicsUnit.Pixel);*/
     }
 }

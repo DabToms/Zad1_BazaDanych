@@ -6,35 +6,20 @@ using System.Threading.Tasks;
 using ChessForms.Figures;
 
 namespace ChessForms.Decorators;
-public class AbstractDecorator : IFigure
+public class AbstractDecorator : IFigureFlyWeight
 {
-    private IFigure Figure;
-    public AbstractDecorator(IFigure fig)
+    private IFigureFlyWeight Figure;
+    public AbstractDecorator(IFigureFlyWeight fig)
     {
         Figure = fig;
     }
 
-    public virtual void draw(Graphics g)
+    public virtual void draw(Graphics g,Point coordinates)
     {
-        Figure.draw(g);
+        Figure.draw(g,coordinates);
     }
 
-    public virtual int GetX()
-    {
-        return Figure.GetX();
-    }
-
-    public virtual int getY()
-    {
-        return Figure.GetX();
-    }
-
-    public virtual void moveTo(int xx, int yy)
-    {
-        Figure.moveTo(xx, yy);
-    }
-
-    public virtual IFigure Unbox()
+    public virtual IFigureFlyWeight Unbox()
     {
         return Figure.Unbox();
     }

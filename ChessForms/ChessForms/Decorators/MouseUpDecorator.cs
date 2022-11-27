@@ -9,14 +9,14 @@ using ChessForms.Figures;
 namespace ChessForms.Decorators;
 public class MouseUpDecorator : AbstractDecorator
 {
-    public MouseUpDecorator(IFigure fig) : base(fig)
+    public MouseUpDecorator(IFigureFlyWeight fig) : base(fig)
     {
     }
-    public override void draw(Graphics g)
+    public override void draw(Graphics g,Point coordinates)
     {
         g.TranslateTransform(ChessboardForms.ZEROX, ChessboardForms.ZEROY);
         g.ScaleTransform(AbstractFigure.TILESIZE, AbstractFigure.TILESIZE);
-        base.draw(g);
+        base.draw(g, coordinates);
         g.TranslateTransform(0, 0);
         g.ScaleTransform(1, 1);
     }
