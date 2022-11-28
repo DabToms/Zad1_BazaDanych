@@ -7,6 +7,8 @@ using System.Security.AccessControl;
 using ChessForms.Decorators;
 using ChessForms.Figures;
 
+using Microsoft.VisualBasic.Devices;
+
 namespace ChessForms;
 
 public partial class ChessboardForms : Form
@@ -14,26 +16,26 @@ public partial class ChessboardForms : Form
     public static readonly int ZEROX = 23;
     public static readonly int ZEROY = 7;
 
-    private Dictionary<Point, IFigure> board = new Dictionary<Point, IFigure>();
+    private Dictionary<Point, IFigureFlyWeight> board = new Dictionary<Point, IFigureFlyWeight>();
 
     private Image image;
-    private IFigure? current = null;
+    private IFigureFlyWeight? current = null;
     private Point? mouse = null;
     private Matrix mat = new Matrix();
 
     public ChessboardForms()
     {
         InitializeComponent();
-        board.Add(new Point(0, 2), new Figure(11, 0, 2));
-        board.Add(new Point(0, 6), new Figure(0, 0, 6));
-        board.Add(new Point(1, 4), new Figure(6, 1, 4));
-        board.Add(new Point(1, 5), new Figure(5, 1, 5));
-        board.Add(new Point(3, 7), new Figure(1, 3, 7));
-        board.Add(new Point(4, 3), new Figure(6, 4, 3));
-        board.Add(new Point(4, 4), new Figure(7, 4, 4));
-        board.Add(new Point(5, 4), new Figure(6, 5, 4));
-        board.Add(new Point(5, 6), new Figure(0, 6, 5));
-        board.Add(new Point(7, 4), new Figure(0, 7, 4));
+        board.Add(new Point(0, 2), FigureFlyWeight.getFigure(11));
+        board.Add(new Point(0, 6), FigureFlyWeight.getFigure(0));
+        board.Add(new Point(1, 4), FigureFlyWeight.getFigure(6));
+        board.Add(new Point(1, 5), FigureFlyWeight.getFigure(5));
+        board.Add(new Point(3, 7), FigureFlyWeight.getFigure(1));
+        board.Add(new Point(4, 3), FigureFlyWeight.getFigure(6));
+        board.Add(new Point(4, 4), FigureFlyWeight.getFigure(7));
+        board.Add(new Point(5, 4), FigureFlyWeight.getFigure(6));
+        board.Add(new Point(5, 6), FigureFlyWeight.getFigure(0));
+        board.Add(new Point(7, 4), FigureFlyWeight.getFigure(0));
 
         try
         {
@@ -93,10 +95,9 @@ public partial class ChessboardForms : Form
         Console.WriteLine("REDO");
     }
 
-    public void drop(IFigure p, int x, int y)
+    public void drop(IFigureFlyWeight p, int x, int y)
     {
         this.Refresh();
-        p.moveTo(x, y);
         if (board.ContainsKey(new Point(x, y)))
         {
             board.Remove(new Point(x, y));
@@ -108,13 +109,15 @@ public partial class ChessboardForms : Form
         }
     }
 
-    public IFigure? take(int x, int y)
+    public IFigureFlyWeight? take(int x, int y)
     {
         this.Refresh();
 
         if (board.ContainsKey(new Point(x, y)))
         {
-            return board[new Point(x, y)];
+            var figure = board[new Point(x, y)];
+            board.Remove(new Point(x, y));
+            return figure;
         }
         return null;
     }
@@ -128,13 +131,13 @@ public partial class ChessboardForms : Form
         foreach (var hash in board)
         {
             var decoratedFigure = new TransformatedDecorator(hash.Value);
-            decoratedFigure.draw(graphic);
+            decoratedFigure.draw(graphic, hash.Key);
         }
 
         if (mouse != null && current != null)
         {
             var decoratedFigure = new TransformatedDecorator(this.current);
-            decoratedFigure.draw(graphic);
+            decoratedFigure.draw(graphic, (Point)this.mouse);
         }
     }
 }

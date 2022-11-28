@@ -17,6 +17,11 @@ public abstract class AbstractFigure : IFigure
         y = yy;
     }
 
+    public AbstractFigure(int idx)
+    {
+        index = idx;
+    }
+
     public abstract void draw(Graphics g);
 
     public virtual int GetX()

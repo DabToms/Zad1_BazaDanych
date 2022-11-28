@@ -17,6 +17,11 @@ public class Figure : AbstractFigure
         x = xx;
         y = yy;
     }
+
+    public Figure(int idx) : base(idx)
+    {
+        index = idx;
+    }
     public override void draw(Graphics g)
     {
         Rectangle sourceRect = new Rectangle(TILESIZE * index, 0, TILESIZE, TILESIZE);

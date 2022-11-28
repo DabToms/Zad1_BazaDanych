@@ -9,13 +9,13 @@ using ChessForms.Figures;
 namespace ChessForms.Decorators;
 public class TransformatedDecorator : AbstractDecorator
 {
-    public TransformatedDecorator(IFigure fig) : base(fig)
+    public TransformatedDecorator(IFigureFlyWeight fig) : base(fig)
     {
     }
-    public override void draw(Graphics g)
+    public override void draw(Graphics g,Point point)
     {
         g.Transform = new Matrix();
         g.TranslateTransform(ChessboardForms.ZEROX,ChessboardForms.ZEROY);
-        base.draw(g);
+        base.draw(g,point);
     }
 }
