@@ -7,27 +7,14 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {
       "ChessForms/1.0.0": {
-        "dependencies": {
-          "ChessForms.Core": "1.0.0"
-        },
         "runtime": {
           "ChessForms.dll": {}
-        }
-      },
-      "ChessForms.Core/1.0.0": {
-        "runtime": {
-          "ChessForms.Core.dll": {}
         }
       }
     }
   },
   "libraries": {
     "ChessForms/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "ChessForms.Core/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

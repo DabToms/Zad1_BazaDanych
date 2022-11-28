@@ -10,9 +10,6 @@ C:\Users\dabto\Desktop\Studia\ZTP\ChessForms\ChessForms\bin\Debug\net6.0-windows
 C:\Users\dabto\Desktop\Studia\ZTP\ChessForms\ChessForms\bin\Debug\net6.0-windows\ChessForms.runtimeconfig.json
 C:\Users\dabto\Desktop\Studia\ZTP\ChessForms\ChessForms\bin\Debug\net6.0-windows\ChessForms.dll
 C:\Users\dabto\Desktop\Studia\ZTP\ChessForms\ChessForms\bin\Debug\net6.0-windows\ChessForms.pdb
-C:\Users\dabto\Desktop\Studia\ZTP\ChessForms\ChessForms\bin\Debug\net6.0-windows\ChessForms.Core.dll
-C:\Users\dabto\Desktop\Studia\ZTP\ChessForms\ChessForms\bin\Debug\net6.0-windows\ChessForms.Core.pdb
-C:\Users\dabto\Desktop\Studia\ZTP\ChessForms\ChessForms\obj\Debug\net6.0-windows\ChessForms.csproj.CopyComplete
 C:\Users\dabto\Desktop\Studia\ZTP\ChessForms\ChessForms\obj\Debug\net6.0-windows\ChessForms.dll
 C:\Users\dabto\Desktop\Studia\ZTP\ChessForms\ChessForms\obj\Debug\net6.0-windows\refint\ChessForms.dll
 C:\Users\dabto\Desktop\Studia\ZTP\ChessForms\ChessForms\obj\Debug\net6.0-windows\ChessForms.pdb
